@@ -64,6 +64,7 @@ int main(int argc, char *argv[])
 	if (size != read(fd, shdr64, size))
 	  {
 	    fprintf(stderr, "Error on section header read\n");
+	    return -1;
 	  }
 	names = malloc(shdr64[hdr64.e_shstrndx].sh_size + 1);
 	names[shdr64[hdr64.e_shstrndx].sh_size] = '\0';
